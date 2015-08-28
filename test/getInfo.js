@@ -7,7 +7,14 @@ vows.describe('getInfo').addBatch({
   'from a youtube video': {
     'topic': function() {
       var video = 'http://www.youtube.com/watch?v=90AiXO1pAiA';
-      ytdl.getInfo(video, ['-f', '18/22/37/38'], this.callback);
+      var that = this;
+      ytdl.getInfo(video, ['-f', '18/22/37/38'])
+        .then(function (info) {
+
+          that.callback(null, info);
+
+        })
+        .catch(that.callback);;
     },
 
     'info returned': function(err, info) {
@@ -34,7 +41,14 @@ vows.describe('getInfo').addBatch({
   'from a youtube playlist': {
     'topic': function() {
       var pl = 'https://www.youtube.com/playlist?list=PLEFA9E9D96CB7F807';
-      ytdl.getInfo(pl, this.callback);
+      var that = this;
+      ytdl.getInfo(pl)
+        .then(function (info) {
+
+          that.callback(null, info);
+
+        })
+        .catch(that.callback);;
     },
 
     'info returned': function(err, info) {
@@ -49,7 +63,14 @@ vows.describe('getInfo').addBatch({
   'from a soundcloud track': {
     'topic': function() {
       var video = 'https://soundcloud.com/erasedtapes/kiasmos-bent';
-      ytdl.getInfo(video, this.callback);
+      var that = this;
+      ytdl.getInfo(video)
+        .then(function (info) {
+
+          that.callback(null, info);
+
+        })
+        .catch(that.callback);;
     },
     'info returned': function(err, info) {
       assert.isNull(err);
@@ -67,7 +88,14 @@ vows.describe('getInfo').addBatch({
   'from a vimeo video': {
     'topic': function() {
       var video = 'https://vimeo.com/6586873';
-      ytdl.getInfo(video, this.callback);
+      var that = this;
+      ytdl.getInfo(video)
+        .then(function (info) {
+
+          that.callback(null, info);
+
+        })
+        .catch(that.callback);;
     },
 
     'info returned': function(err, info) {
@@ -92,7 +120,14 @@ vows.describe('getInfo').addBatch({
     'topic': function() {
       var vimeo = 'https://vimeo.com/6586873';
       var youtube = 'http://www.youtube.com/watch?v=90AiXO1pAiA';
-      ytdl.getInfo([vimeo, youtube], this.callback);
+      var that = this;
+      ytdl.getInfo([vimeo, youtube])
+        .then(function (info) {
+
+          that.callback(null, info);
+
+        })
+        .catch(that.callback);
     },
 
     'info returned': function(err, info) {

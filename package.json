@@ -18,7 +18,9 @@
     "preupdate": "node ./scripts/download.js",
     "test": "vows ./test/*.js --spec"
   },
-  "dependencies": {},
+  "dependencies": {
+    "q": "^1.4.1"
+  },
   "devDependencies": {
     "vows": "*"
   },
