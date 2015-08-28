@@ -1,0 +1,31 @@
+{
+  "name": "video-source",
+  "description": "Get video source URLs from video-sharing websites",
+  "keywords": [],
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AlicanC/node-video-source.git"
+  },
+  "author": "Alican Çubukçuoğlu (https://github.com/AlicanC)",
+  "contributors": [],
+  "main": "./lib/video-source.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "scripts": {
+    "preinstall": "node ./scripts/download.js",
+    "preupdate": "node ./scripts/download.js",
+    "test": "vows ./test/*.js --spec"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vows": "*"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/AlicanC/node-video-source/raw/master/LICENSE"
+    }
+  ]
+}
